@@ -1,0 +1,37 @@
+---
+title: "Find us webpage"
+author: "Theo Livingwell"
+date: "October 1, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Loughton Baptist Church
+
+If you are, 
+* new to milton keynes,
+* looking for somewhere to worship and practice your faith and
+* needs prayer for any occassion or situation in your life,
+
+visit us at Loughton Baptist Church and we are happy to help 
+
+```{r, echo = FALSE}
+
+# load the leaflet pack
+library(leaflet)
+
+# create a map and assign it to the variable mk_map
+
+mk_map <- leaflet() %>%
+addTiles()
+
+# link to loughton baptist church
+lbc <- c("https://www.bing.com/maps?&ty=18&q=Loughton%20Baptist%20Church%20Milton%20Keynes%20Buckinghamshire&ss=ypid.YN1029x4786552629333451938&ppois=52.0286407470703_-0.784298002719879_Loughton%20Baptist%20Church_YN1029x4786552629333451938~&cp=52.028641~-0.784298&v=2&sV=1")
+
+lbc = "Loughton Baptist Church"
+       
+leaflet()%>%
+        addTiles() %>%
+                addMarkers(lat= 52.028637, lng= -0.784298, popup=lbc)
+```
